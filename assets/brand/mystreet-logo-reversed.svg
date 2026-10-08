@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" width="220" height="48" role="img" aria-label="MyStreet.id">
+  <title>MyStreet.id reversed</title>
+  <!-- For dark backgrounds: cream wordmark, mark keeps brand colors on a light tile for contrast -->
+  <g>
+    <rect x="0" y="0" width="48" height="48" rx="11" fill="#F7F3ED"/>
+    <path d="M11 10 L19 10 L13 38 L5 38 Z" fill="#F06A4F"/>
+    <g fill="#132A44">
+      <path d="M24 12 L40 12 L38.4 18 L22.4 18 Z"/>
+      <path d="M22.8 21 L36 21 L34.4 27 L21.2 27 Z"/>
+      <path d="M21.6 30 L38 30 L36.4 36 L20 36 Z"/>
+    </g>
+  </g>
+  <text x="60" y="33" font-family="Inter, 'Segoe UI', system-ui, -apple-system, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="-0.4">
+    <tspan fill="#F7F3ED">MyStreet</tspan><tspan fill="#F06A4F">.id</tspan>
+  </text>
+</svg>

@@ -1,0 +1,93 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.groupLabel {
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  font-weight: var(--weight-medium);
+  margin: var(--space-sm) 0 0;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+}
+
+.row.selected {
+  border-color: var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.row.dragOver {
+  border-color: var(--color-accent);
+  border-style: dashed;
+}
+
+.selectBtn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  color: var(--color-text);
+  font: inherit;
+}
+
+.selectBtn:hover {
+  background-color: var(--color-surface-sunken);
+}
+
+.rowTitle {
+  font-weight: var(--weight-medium);
+  font-size: 0.9375rem;
+}
+
+.rowDesc {
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+}
+
+.hiddenTag {
+  font-size: var(--text-label);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-muted);
+}
+
+.rowControls {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.addRow {
+  margin-top: var(--space-sm);
+}
+
+.allAdded {
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+  margin: 0;
+}

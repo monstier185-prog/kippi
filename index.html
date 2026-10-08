@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/mystreet-favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <!--
+      Static-safe default: a crawler that reads this HTML without executing JS
+      sees `noindex`. The app is local-first and private by default, so the only
+      page meant to be indexable is a published public portfolio (/p/:slug),
+      which flips robots to `index,follow` at runtime via useDocumentHead. This
+      is best-effort on a no-SSR SPA, but the static default now fails CLOSED
+      (noindex) instead of open. See docs/SECURITY_REVIEW.md for the honest
+      caveat (local-only URLs are not crawlable off-device anyway).
+    -->
+    <meta name="robots" content="noindex" />
+    <meta
+      name="description"
+      content="MyStreet.id — build, edit, preview, and export a calm, professional CV portfolio website. Local-first: your drafts stay in your browser."
+    />
+    <title>MyStreet.id</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

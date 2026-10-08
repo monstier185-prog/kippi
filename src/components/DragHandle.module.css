@@ -1,0 +1,26 @@
+.handle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: grab;
+}
+
+.handle:hover {
+  color: var(--color-primary);
+  background-color: var(--color-surface-sunken);
+}
+
+.handle:active {
+  cursor: grabbing;
+}
+
+.handle:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,72 @@
+/*
+ * MyStreet.id design tokens (spec Section 7).
+ * Centralized single source of truth for color, spacing, radius, and type.
+ * Brand palette:
+ *   deep navy  #132A44  (primary — structure, headings, mark)
+ *   muted coral #F06A4F (accent — reserved for status + important CTA only)
+ *   warm off-white #F7F3ED (light canvas)
+ * Text is charcoal, never pure black, to keep the surface calm.
+ */
+:root {
+  /* --- Color: surfaces --- */
+  --color-canvas: #f7f3ed;
+  --color-surface: #ffffff;
+  --color-surface-sunken: #f1ece3;
+  --color-surface-dark: #132a44; /* for reversed-logo / dark contexts */
+
+  /* --- Color: text --- */
+  --color-text: #1d2733; /* charcoal, not pure black */
+  --color-text-muted: #5a6572;
+  --color-text-on-dark: #f7f3ed;
+
+  /* --- Color: lines --- */
+  --color-border: #e4ddd1; /* thin, subtle */
+  --color-border-strong: #cbc2b2;
+
+  /* --- Color: brand --- */
+  --color-primary: #132a44; /* deep navy */
+  --color-primary-hover: #0d1f33;
+  --color-accent: #f06a4f; /* muted coral — used sparingly */
+  --color-accent-hover: #d9553c; /* darker coral */
+
+  /* --- Color: status --- */
+  --color-danger: #c0392b;
+  --color-warning: #c67a12;
+  --color-success: #2f7a4d;
+
+  /* --- Spacing scale --- */
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2.5rem; /* 40px */
+
+  /* --- Radius scale (small-to-medium; deliberately not all pills) --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+
+  /* --- Typography --- */
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', 'Menlo', 'Consolas', monospace;
+
+  --text-body: 1rem; /* 16px */
+  --text-label: 0.8125rem; /* 13px */
+  --text-heading: 1.375rem; /* 22px */
+  --text-display: 2.25rem; /* 36px */
+
+  --leading-body: 1.6;
+  --leading-heading: 1.2;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  /* --- Elevation (restrained; shadows used sparingly) --- */
+  --shadow-sm: 0 1px 2px rgba(19, 42, 68, 0.06);
+  --shadow-md: 0 4px 16px rgba(19, 42, 68, 0.08);
+
+  /* --- Focus ring --- */
+  --focus-ring: 0 0 0 3px rgba(240, 106, 79, 0.45);
+}

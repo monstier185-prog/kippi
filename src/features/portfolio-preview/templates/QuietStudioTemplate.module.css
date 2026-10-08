@@ -1,0 +1,181 @@
+/* Quiet Studio: generous whitespace, minimal, one-item-per-row projects. */
+.root {
+  font-family: var(--pf-font-body);
+  color: var(--color-text);
+  max-width: 44rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--pf-space-unit) * 4);
+  padding: calc(var(--pf-space-unit) * 1.5) 0;
+}
+
+/* Distinct lede/intro block that wraps the profile (not a bare header). */
+.lede {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--pf-space-unit) * 0.8);
+  text-align: center;
+  padding-bottom: calc(var(--pf-space-unit) * 1.4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ledeKicker {
+  margin: 0;
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: 0.26em;
+  color: var(--color-text-muted);
+}
+
+/*
+ * Two-part section composition: a quiet, numbered label column, then the body.
+ * On wide viewports the label sits beside the content; on narrow it stacks.
+ */
+.section {
+  display: grid;
+  grid-template-columns: minmax(6rem, 10rem) 1fr;
+  gap: calc(var(--pf-space-unit) * 1.6);
+  align-items: start;
+}
+
+.sectionLabel {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--pf-space-unit) * 0.3);
+}
+
+.sectionMarker {
+  font-family: var(--pf-font-heading);
+  font-size: var(--text-label);
+  letter-spacing: 0.1em;
+  color: var(--pf-accent);
+}
+
+.heading {
+  font-family: var(--pf-font-heading);
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-text-muted);
+  margin: 0;
+  font-weight: var(--weight-medium);
+}
+
+.content {
+  min-width: 0;
+}
+
+/*
+ * One-item-per-row project treatment with generous whitespace — a vertical
+ * stack of self-contained articles rather than a dense grid.
+ */
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--pf-space-unit) * 2.4);
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--pf-space-unit) * 0.6);
+  padding-bottom: calc(var(--pf-space-unit) * 2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.projectList > .project:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.projectHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.projectName {
+  margin: 0;
+  font-family: var(--pf-font-heading);
+  font-size: var(--text-heading);
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+}
+
+.projectYear {
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.projectSummary {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: var(--leading-body);
+}
+
+.projectMeta {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+.projectBody {
+  margin: 0;
+  max-width: 68ch;
+  line-height: var(--leading-body);
+  white-space: pre-wrap;
+}
+
+.projectTags {
+  list-style: none;
+  margin: calc(var(--pf-space-unit) * 0.2) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.projectTag {
+  font-size: var(--text-label);
+  color: var(--color-text);
+  background-color: var(--color-surface-sunken);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 2px var(--space-sm);
+}
+
+.projectLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.link {
+  color: var(--pf-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-size: 0.9375rem;
+}
+
+.link:hover {
+  color: var(--pf-accent-hover);
+}
+
+/* Narrow viewports: stack the label above the body, no horizontal overflow. */
+@media (max-width: 34rem) {
+  .section {
+    grid-template-columns: 1fr;
+    gap: calc(var(--pf-space-unit) * 0.8);
+  }
+
+  .sectionLabel {
+    flex-direction: row;
+    align-items: baseline;
+    gap: var(--space-sm);
+  }
+}

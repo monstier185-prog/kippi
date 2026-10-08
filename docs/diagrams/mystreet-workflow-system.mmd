@@ -1,0 +1,29 @@
+%% MyStreet.id — System Workflow (Spec Section 4: Workflow Sistem)
+%% Adapted HONESTLY to the local-first implementation: persistence is a local
+%% draft cache in the browser. Server / database / public-URL nodes are marked
+%% as local-only / NOT provisioned so the diagram matches reality.
+flowchart LR
+    subgraph Browser["Browser (the whole app runs here)"]
+        UI[React SPA UI]
+        Repo[PortfolioRepository abstraction]
+        Cache[(Local Draft Cache\nlocalStorage / IndexedDB)]
+        Export[Export: print / PDF]
+        UI --> Repo
+        Repo --> Cache
+        Cache --> Repo
+        Repo --> UI
+        UI --> Export
+    end
+
+    subgraph NotProvisioned["Not provisioned in local-first build"]
+        Server["App Server\n(local-only / not provisioned)"]
+        DB[("Database\n(local-only / not provisioned)")]
+        PublicURL["Live Public URL\n(local-only / not provisioned)"]
+    end
+
+    Repo -. future remote impl .-> Server
+    Server -. future .-> DB
+    UI -. honest note: /p/:slug reads Local Draft Cache,\nNOT a live public URL .-> PublicURL
+
+    classDef unavailable fill:#f1ece3,stroke:#cbc2b2,stroke-dasharray:4 3,color:#5a6572;
+    class Server,DB,PublicURL unavailable;

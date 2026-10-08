@@ -1,0 +1,170 @@
+/*
+ * Content blocks shared by every template. These style the *content* of a
+ * section; the surrounding layout (columns, timeline, spacing rhythm) is owned
+ * by each template. Spacing is driven by --pf-space-unit so density changes
+ * flow through automatically. The single accent is used sparingly (links,
+ * small meta), never as decoration.
+ */
+.prose {
+  margin: 0;
+  max-width: 68ch;
+  line-height: var(--leading-body);
+  white-space: pre-wrap;
+}
+
+.entries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--pf-space-unit) * 1.1);
+}
+
+.entry {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--pf-space-unit) * 0.3);
+}
+
+.entryHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.entryTitle {
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.entryMeta {
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.entrySub {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+.entryBody {
+  margin: 0;
+  max-width: 68ch;
+  line-height: var(--leading-body);
+  white-space: pre-wrap;
+}
+
+.bullets {
+  margin: calc(var(--pf-space-unit) * 0.2) 0 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--pf-space-unit) * 0.2);
+}
+
+.tags {
+  list-style: none;
+  margin: calc(var(--pf-space-unit) * 0.2) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.tag {
+  font-size: var(--text-label);
+  color: var(--color-text);
+  background-color: var(--color-surface-sunken);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 2px var(--space-sm);
+}
+
+.tagMeta {
+  color: var(--color-text-muted);
+}
+
+.projectGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: var(--pf-space-unit);
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--pf-space-unit) * 0.3);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.link {
+  color: var(--pf-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-size: 0.9375rem;
+}
+
+.link:hover {
+  color: var(--pf-accent-hover);
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  border-left: 2px solid var(--pf-accent);
+  padding-left: var(--space-md);
+}
+
+.quote {
+  margin: 0;
+  font-style: italic;
+  line-height: var(--leading-body);
+}
+
+.cite {
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+  font-style: normal;
+}
+
+.contact {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-xs) var(--space-md);
+}
+
+.contactRow {
+  display: contents;
+}
+
+.contactLabel {
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+}
+
+.contactValue {
+  margin: 0;
+}
+
+.socials {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}

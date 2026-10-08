@@ -1,0 +1,168 @@
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.app-brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.app-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.app-nav a {
+  text-decoration: none;
+  font-weight: var(--weight-medium);
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+}
+
+.app-nav a:hover {
+  color: var(--color-primary);
+}
+
+/* The single coral accent in the header: the primary create CTA. */
+.app-nav-cta {
+  color: #fff !important;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-md);
+  padding: var(--space-xs) var(--space-md);
+}
+
+.app-nav-cta:hover {
+  color: #fff !important;
+  background-color: var(--color-accent-hover);
+}
+
+/* Keyboard skip link — visible only when focused. */
+.skip-link {
+  position: absolute;
+  left: var(--space-md);
+  top: -3rem;
+  z-index: 300;
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-xs) var(--space-md);
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus-visible {
+  top: var(--space-sm);
+}
+
+.app-main {
+  flex: 1;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.app-main p {
+  color: var(--color-text-muted);
+  margin-top: var(--space-md);
+}
+
+.app-footer {
+  padding: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.app-footer-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.app-footer-nav a {
+  text-decoration: none;
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+}
+
+.app-footer-nav a:hover {
+  color: var(--color-primary);
+}
+
+.app-footer-note {
+  margin: 0;
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+  max-width: none;
+}
+
+/* --- Print rules (spec Sesi 7) ---
+ * When printing (or "Save as PDF"), strip the application chrome so only the
+ * portfolio/CV content prints, and apply stable page-break behavior. These are
+ * document-wide so they apply to both the /cv/:id print view and a direct
+ * browser print of the public page. */
+@media print {
+  .app-header,
+  .app-footer,
+  .skip-link {
+    display: none !important;
+  }
+
+  .app-shell,
+  .app-main {
+    display: block;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: #ffffff;
+    color: #111111;
+  }
+
+  /* Don't orphan a section heading at the bottom of a page. */
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Keep a section's content from splitting awkwardly across pages. */
+  section,
+  li,
+  blockquote,
+  figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}

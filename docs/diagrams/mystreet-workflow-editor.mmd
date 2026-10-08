@@ -1,0 +1,26 @@
+%% MyStreet.id — Editor & Save Workflow (Spec Section 4: Workflow Editor dan Penyimpanan)
+%% Local-first: "saving" writes to the Local Draft Cache in the browser. There is
+%% no server round-trip. The repository validates data before trusting it.
+sequenceDiagram
+    autonumber
+    actor User
+    participant Editor as Editor UI
+    participant Preview as Live Preview
+    participant Repo as PortfolioRepository
+    participant Cache as Local Draft Cache (browser)
+
+    User->>Editor: Edit a field
+    Editor->>Preview: Update preview (debounced, local)
+    Editor->>Repo: save(draft)
+    Repo->>Repo: Validate with zod schema
+    alt Valid
+        Repo->>Cache: Write draft (localStorage / IndexedDB)
+        Cache-->>Repo: Ack (local, synchronous-ish)
+        Repo-->>Editor: SaveState = saved
+        Editor-->>User: Show "Saved locally"
+    else Invalid
+        Repo-->>Editor: ValidationErrors
+        Editor-->>User: Show inline errors (no data lost)
+    end
+
+    Note over Repo,Cache: No network, no server. Data never leaves this browser\nunless the user explicitly exports it.

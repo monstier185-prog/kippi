@@ -1,0 +1,133 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+@media (max-width: 40rem) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.itemList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.itemHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.itemTitle {
+  font-size: var(--text-label);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+}
+
+.itemControls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.emptyHint {
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.addButtonRow {
+  display: flex;
+}
+
+/* --- ImageField --- */
+.imageField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.imageUpload {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.uploadLabel {
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.uploadBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-xs) var(--space-md);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-primary);
+  font-size: var(--text-label);
+  font-weight: var(--weight-medium);
+}
+
+.uploadLabel:focus-within .uploadBtn {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.srOnlyInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.uploadHint {
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+}
+
+.uploadRemove {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--color-danger);
+  font-size: var(--text-label);
+  text-decoration: underline;
+}
+
+.imageError {
+  font-size: var(--text-label);
+  color: var(--color-danger);
+}

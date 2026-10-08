@@ -1,0 +1,51 @@
+/**
+ * Barrel for the portfolio domain model: typed shapes plus their zod schemas.
+ * Import from `../models` rather than reaching into individual files.
+ */
+export type {
+  PublicationStatus,
+  SectionType,
+  SaveState,
+  SocialLink,
+  Experience,
+  Education,
+  Project,
+  Skill,
+  Service,
+  Certification,
+  Award,
+  Testimonial,
+  ProfileContent,
+  AboutContent,
+  ExperienceContent,
+  EducationContent,
+  SkillsContent,
+  ProjectsContent,
+  ServicesContent,
+  CertificationsContent,
+  AwardsContent,
+  TestimonialsContent,
+  ContactContent,
+  SocialLinksContent,
+  SectionContent,
+  PortfolioSection,
+  ThemeConfig,
+  TemplateId,
+  AccentId,
+  TypographyPairingId,
+  SpacingDensity,
+  ProfileImageShape,
+  SeoConfig,
+  Portfolio,
+  ValidationError,
+} from './types';
+
+export {
+  publicationStatusSchema,
+  sectionTypeSchema,
+  portfolioSectionSchema,
+  themeConfigSchema,
+  seoConfigSchema,
+  portfolioSchema,
+  portfolioTitleSchema,
+} from './schemas';

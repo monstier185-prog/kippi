@@ -1,0 +1,20 @@
+/*
+ * The rendered portfolio surface. It establishes the theme-scoped CSS custom
+ * properties (set inline via themeStyle) and a readable base. Everything inside
+ * is driven by --pf-* variables so a theme/template change is purely
+ * presentational and never touches the data.
+ */
+.surface {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--pf-font-body);
+  line-height: var(--leading-body);
+}
+
+.empty {
+  color: var(--color-text-muted);
+  font-style: italic;
+  max-width: 48ch;
+  margin: 0 auto;
+  text-align: center;
+}

@@ -1,0 +1,71 @@
+.center {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.page {
+  width: 100%;
+}
+
+.localBanner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  margin-bottom: var(--space-lg);
+  background: var(--color-surface-sunken);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+}
+
+.localBanner span {
+  max-width: 60ch;
+}
+
+.printBtn {
+  flex: none;
+  cursor: pointer;
+  background: var(--color-primary);
+  color: var(--color-text-on-dark);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-xs) var(--space-md);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-label);
+}
+
+.printBtn:hover {
+  background: var(--color-primary-hover);
+}
+
+.main {
+  width: 100%;
+}
+
+.homeLink {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-text-on-dark);
+  text-decoration: none;
+  font-weight: var(--weight-medium);
+}
+
+.homeLink:hover {
+  color: var(--color-text-on-dark);
+  background: var(--color-primary-hover);
+}
+
+/* The local banner is on-screen context only — never printed. */
+@media print {
+  .localBanner {
+    display: none !important;
+  }
+}

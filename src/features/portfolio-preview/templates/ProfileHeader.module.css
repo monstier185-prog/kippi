@@ -1,0 +1,87 @@
+.header {
+  display: flex;
+  gap: var(--pf-space-unit);
+}
+
+.avatar {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: var(--pf-avatar-radius);
+  flex-shrink: 0;
+  border: 1px solid var(--color-border);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--pf-space-unit) * 0.25);
+  min-width: 0;
+}
+
+.name {
+  margin: 0;
+  font-family: var(--pf-font-heading);
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+}
+
+.headline {
+  margin: 0;
+  color: var(--pf-accent);
+  font-weight: var(--weight-medium);
+}
+
+.location {
+  margin: 0;
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+}
+
+.summary {
+  margin: calc(var(--pf-space-unit) * 0.25) 0 0;
+  max-width: 64ch;
+  line-height: var(--leading-body);
+  white-space: pre-wrap;
+}
+
+/* --- Variants --- */
+.stacked {
+  flex-direction: row;
+  align-items: center;
+}
+
+.inline {
+  flex-direction: row;
+  align-items: center;
+}
+
+.inline .avatar {
+  width: 3.25rem;
+  height: 3.25rem;
+}
+
+.inline .name {
+  font-size: var(--text-heading);
+}
+
+/* Quiet Studio: large, centered, generous whitespace. */
+.lede {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: calc(var(--pf-space-unit) * 0.6);
+}
+
+.lede .avatar {
+  width: 6.5rem;
+  height: 6.5rem;
+}
+
+.lede .text {
+  align-items: center;
+}
+
+.lede .summary {
+  text-align: center;
+}

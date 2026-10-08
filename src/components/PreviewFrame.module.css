@@ -1,0 +1,57 @@
+.frame {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-surface-sunken);
+}
+
+.dots {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-border-strong);
+}
+
+.addressBar {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 2px var(--space-sm);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.viewport {
+  padding: var(--space-lg);
+}
+
+/* Device widths — constrain the inner content, not the frame. */
+.tablet .viewport {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.mobile .viewport {
+  max-width: 22rem;
+  margin: 0 auto;
+}

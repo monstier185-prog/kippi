@@ -1,0 +1,6 @@
+.pane {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 32rem;
+}

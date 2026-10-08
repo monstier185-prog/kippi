@@ -1,0 +1,26 @@
+/* Editorial: a single reading column with strong vertical rhythm. */
+.root {
+  font-family: var(--pf-font-body);
+  color: var(--color-text);
+  max-width: 46rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--pf-space-unit) * 2.2);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--pf-space-unit) * 0.8);
+  padding-top: calc(var(--pf-space-unit) * 1.1);
+  border-top: 1px solid var(--color-border);
+}
+
+.heading {
+  font-family: var(--pf-font-heading);
+  font-size: var(--text-heading);
+  color: var(--color-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+}

@@ -1,0 +1,70 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.facts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin: 0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: var(--space-sm);
+  align-items: start;
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.row dt {
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.row dd {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.row code {
+  font-family: var(--font-mono);
+  background: var(--color-surface);
+  padding: 0 0.2em;
+  border-radius: var(--radius-sm);
+  word-break: break-all;
+}
+
+.urlNote {
+  margin: 0;
+  padding: var(--space-sm);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.url {
+  font-family: var(--font-mono);
+  word-break: break-all;
+}
+
+.muted {
+  color: var(--color-text-muted);
+  font-size: var(--text-label);
+}
+
+/* Collapse the two-column facts layout on narrow screens — no overflow. */
+@media (max-width: 34rem) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}

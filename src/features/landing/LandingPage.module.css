@@ -1,0 +1,141 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* --- Hero --- */
+.hero {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.heroTitle {
+  font-size: var(--text-display);
+  line-height: var(--leading-heading);
+  color: var(--color-primary);
+}
+
+.heroLede {
+  color: var(--color-text-muted);
+  font-size: 1.0625rem;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.heroNote {
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+  margin-top: var(--space-xs);
+}
+
+/* --- Generic section --- */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.sectionHead {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.sectionLabel {
+  font-size: var(--text-label);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+/* --- How it works --- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  list-style: none;
+  padding: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.stepNumber {
+  font-size: var(--text-label);
+  font-weight: var(--weight-bold);
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+}
+
+.stepTitle {
+  font-size: 1.0625rem;
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.stepDesc {
+  color: var(--color-text-muted);
+  font-size: var(--text-label);
+}
+
+/* --- Example layouts --- */
+.examples {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.exampleHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.exampleName {
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.exampleKind {
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+}
+
+/* --- Responsive --- */
+@media (max-width: 48rem) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .examples {
+    grid-template-columns: 1fr;
+  }
+}

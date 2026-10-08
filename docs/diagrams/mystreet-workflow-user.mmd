@@ -1,0 +1,18 @@
+%% MyStreet.id — User Workflow (Spec Section 4: Workflow Pengguna)
+%% Reflects the actual local-first product: everything happens in the browser.
+flowchart TD
+    A([Open MyStreet.id]) --> B[Landing: understand the product]
+    B --> C[Go to Dashboard]
+    C --> D{Have a portfolio?}
+    D -- No --> E[Create a new portfolio draft]
+    D -- Yes --> F[Open existing draft from local storage]
+    E --> G[Edit content in the Editor]
+    F --> G
+    G --> H[See the live Preview]
+    H --> I{Happy with it?}
+    I -- No --> G
+    I -- Yes --> J[Mark as public or keep private - local flag]
+    J --> K[Export: print / PDF to truly share]
+    K --> L([Done - draft stays in this browser])
+    J --> M[Open local view at /p/:slug in this browser]
+    M --> L
